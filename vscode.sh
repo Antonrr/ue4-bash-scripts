@@ -6,7 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . "$DIR/common/config.source"
 
-cd "$UE4/UnrealEngine/Engine/Build/BatchFiles/Mac"
+cd "$UE4/Engine/Build/BatchFiles/Mac"
 
 ./GenerateProjectFiles.sh "$1Editor" Mac Development "$PROJECTS/$1/$1.uproject" -vscode -engine
 
