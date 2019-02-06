@@ -4,8 +4,8 @@ set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-. "$DIR/config.source"
- 
+. "$DIR/common/config.source"
+
 echo "Are you sure?"
 read x
 

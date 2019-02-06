@@ -6,5 +6,5 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . "$DIR/common/config.source"
 
-"$EDITOR_EXE" "$PROJECTS/$1/$1.uproject"
+"$EDITOR_EXE" "$PROJECTS/$1/$1.uproject" -game
 

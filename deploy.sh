@@ -4,7 +4,7 @@ set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-. "$DIR/config.source"  
+. "$DIR/common/config.source"
 
 DIST="$PROJECTS/$1/Build"
 mkdir -p $DIST
@@ -14,7 +14,7 @@ MODE=Shipping
 
 echo MODE: $MODE
 echo DIST: $DIST
- 
+
 "$UE4/Engine/Build/BatchFiles/RunUAT.sh" BuildCookRun \
     -nocompileeditor -nop4 -project="$PROJECTS/$1/$1.uproject" \
     -cook -allmaps -stage -archive -archivedirectory="$DIST" \

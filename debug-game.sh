@@ -4,7 +4,7 @@ set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-. "$DIR/config.source"
+. "$DIR/common/config.source"
 
-open "$EDITOR"
+lldb "$EDITOR_EXE" -- "$PROJECTS/$1/$1.uproject" -game
 

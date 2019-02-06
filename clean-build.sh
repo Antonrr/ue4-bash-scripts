@@ -6,5 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . "$DIR/common/config.source"
 
-"$EDITOR_EXE" "$PROJECTS/$1/$1.uproject"
+"$DIR/clean.sh" $1
+"$DIR/xcode.sh" $1
+"$DIR/build.sh" $1
 

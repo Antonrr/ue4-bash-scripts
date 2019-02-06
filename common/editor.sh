@@ -4,7 +4,7 @@ set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-. "$DIR/config.source"
- 
-"$EDITOR_EXE" "$PROJECTS/$1/$1.uproject"
+. "$DIR/common/config.source"
+
+open "$EDITOR"
 
