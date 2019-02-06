@@ -4,7 +4,7 @@ For doing things on the command line, that should be simple!
 
 ## quickstart
 
-Edit config.sh and setup the various paths
+Edit config.source and setup the various paths
 
 A typical setup should look like this:
 

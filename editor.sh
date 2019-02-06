@@ -1,3 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source config.sh
-open $EDITOR
+
+. "$DIR/config.source"
+
+open "$EDITOR"
+

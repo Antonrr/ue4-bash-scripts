@@ -1,5 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $DIR/config.sh
-cd $UE4/UnrealEngine
+
+. "$DIR/config.source"
+
+cd "$UE4"
+
 echo "Building: $PROJECTS/$1/$1.uproject"
-./Engine/Build/BatchFiles/Mac/Build.sh TestProjectEditor Mac Development $PROJECTS/$1/$1.uproject
+
+./Engine/Build/BatchFiles/Mac/Build.sh $1Editor Mac Development "$PROJECTS/$1/$1.uproject"
+

@@ -1,8 +1,24 @@
+#!/usr/bin/env bash
+
+set -e
+
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $DIR/config.sh
-mkdir -p $DIST/$1
+
+. "$DIR/config.source"  
+
+DIST="$PROJECTS/$1/Build"
+mkdir -p $DIST
+
 MODE=Shipping
 # MODE=Development
-$UE4/UnrealEngine/Engine/Build/BatchFiles/RunUAT.sh BuildCookRun -nocompileeditor -nop4 -project=$PROJECTS/$1/$1.uproject -cook -allmaps -stage -archive -archivedirectory=$DIST/$1 -package -clientconfig=$MODE -ue4exe=UE4Editor -clean -pak -prereqs -nodebuginfo -targetplatform=Mac -build -utf8output
+
 echo MODE: $MODE
-echo DIST: $DIST/$1
+echo DIST: $DIST
+ 
+"$UE4/Engine/Build/BatchFiles/RunUAT.sh" BuildCookRun \
+    -nocompileeditor -nop4 -project="$PROJECTS/$1/$1.uproject" \
+    -cook -allmaps -stage -archive -archivedirectory="$DIST" \
+    -package -clientconfig=$MODE -ue4exe=UE4Editor -clean -pak \
+    -prereqs -nodebuginfo -targetplatform=Mac -build -utf8output
+
+

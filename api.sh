@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $DIR/config.sh
-atom $UE4/UnrealEngine/Engine/Source/Runtime/
+
+. "$DIR/config.source"
+
+VSCODE="/Applications/Visual Studio Code.app/Contents/MacOS/Electron"
+"$VSCODE" "$UE4/Engine/Source/Runtime/"
+
