@@ -8,5 +8,5 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 cd "$UE4/Engine/Build/BatchFiles/Mac"
 
-./GenerateProjectFiles.sh "$1Editor" Mac Development "$PROJECTS/$1/$1.uproject" -xcode -engine
+./GenerateProjectFiles.sh "$PROJECTS/$1/$1.uproject" -xcode -game -engine
 
