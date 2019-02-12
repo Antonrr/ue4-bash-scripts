@@ -10,5 +10,5 @@ cd "$UE4"
 
 echo "Building: $PROJECTS/$1/$1.uproject"
 
-./Engine/Build/BatchFiles/Mac/Build.sh "$1Editor" Mac Development "$PROJECTS/$1/$1.uproject"
+./Engine/Build/BatchFiles/Mac/Build.sh "$1Editor" Mac Development "$PROJECTS/$1/$1.uproject" -buildscw
 
