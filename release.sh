@@ -6,7 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . "$DIR/common/config.source"
 
-DIST="$PROJECTS/$1/Build"
+DIST="$PROJECTS/$1/ArchivedBuilds/Release"
 mkdir -p $DIST
 
 MODE=Shipping
