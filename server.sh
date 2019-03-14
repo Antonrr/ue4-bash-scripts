@@ -6,7 +6,11 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . "$DIR/common/config.source"
 
-DIST="$PROJECTS/$1/ArchivedBuilds/Development"
+cd "$UE4"
+
+echo "Build and cook dedicated server: $PROJECTS/$1/$1.uproject"
+
+DIST="$PROJECTS/$1/ArchivedBuilds/Server"
 mkdir -p $DIST
 
 # MODE=Shipping
@@ -22,9 +26,10 @@ echo PLATFORM: $PLATFORM
     -project="$PROJECTS/$1/$1.uproject" \
     -nocompileeditor -nop4 \
     -cook -stage -archive -archivedirectory="$DIST" \
-    -package -clientconfig="$MODE" -ue4exe=UE4Editor \
-    -compressed -clean -pak -prereqs -nodebuginfo \
-    -targetplatform="$PLATFORM" -build -utf8output \
-    -messaging \
-    -installed -SkipCookingEditorContent -manifests
+    -package -server -noclient -serverconfig="$MODE" -ue4exe=UE4Editor \
+    -compressed -prereqs \
+    -platform="$PLATFORM" -targetplatform="$PLATFORM" -serverplatform="$PLATFORM" \
+    -build -utf8output \
+    -messaging -ForceUnity -pak \
+    -installed -unversionedcookedcontent
 
