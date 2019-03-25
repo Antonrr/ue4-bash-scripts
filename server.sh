@@ -8,7 +8,10 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 cd "$UE4"
 
-echo "Build and cook dedicated server: $PROJECTS/$1/$1.uproject"
+CAPITAL=$(capital "$1")
+UPROJECT="$CAPITAL.uproject"
+
+echo "Build and cook dedicated server: $PROJECTS/$1/$UPROJECT"
 
 DIST="$PROJECTS/$1/ArchivedBuilds/Server"
 mkdir -p $DIST
@@ -23,7 +26,7 @@ echo DIST: $DIST
 echo PLATFORM: $PLATFORM
 
 "$UE4/Engine/Build/BatchFiles/RunUAT.sh" BuildCookRun \
-    -project="$PROJECTS/$1/$1.uproject" \
+    -project="$PROJECTS/$1/$UPROJECT" \
     -nocompileeditor -nop4 \
     -cook -stage -archive -archivedirectory="$DIST" \
     -package -server -noclient -serverconfig="$MODE" -ue4exe=UE4Editor \

@@ -8,3 +8,7 @@ UE4="$PROJECTS/UnrealEngine"
 EDITOR="$UE4/Engine/Binaries/Mac/UE4Editor.app"
 EDITOR_EXE="$EDITOR/Contents/MacOS/UE4Editor"
 
+function capital {
+    echo "$1" |awk '{print toupper(substr($0,0,1))substr($0,2)}'
+}
+

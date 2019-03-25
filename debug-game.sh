@@ -6,5 +6,8 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . "$DIR/common/config.source"
 
-lldb "$EDITOR_EXE" -- "$PROJECTS/$1/$1.uproject" -game
+CAPITAL=$(capital "$1")
+UPROJECT="$CAPITAL.uproject"
+
+lldb "$EDITOR_EXE" -- "$PROJECTS/$1/$UPROJECT" -game
 

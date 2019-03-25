@@ -8,5 +8,8 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 cd "$UE4/Engine/Build/BatchFiles/Mac"
 
-./GenerateProjectFiles.sh "$PROJECTS/$1/$1.uproject" -vscode -game
+CAPITAL=$(capital "$1")
+UPROJECT="$CAPITAL.uproject"
+
+./GenerateProjectFiles.sh "$PROJECTS/$1/$UPROJECT" -vscode -game
 

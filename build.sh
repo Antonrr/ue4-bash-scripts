@@ -8,7 +8,10 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 cd "$UE4"
 
-echo "Building: $PROJECTS/$1/$1.uproject"
+CAPITAL=$(capital "$1")
+UPROJECT="$CAPITAL.uproject"
 
-./Engine/Build/BatchFiles/Mac/Build.sh "$1Editor" Mac Development "$PROJECTS/$1/$1.uproject" -buildscw
+echo "Building: $PROJECTS/$1/$UPROJECT"
+
+./Engine/Build/BatchFiles/Mac/Build.sh "${CAPITAL}Editor" Mac Development "$PROJECTS/$1/$UPROJECT" -buildscw
 

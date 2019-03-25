@@ -20,8 +20,11 @@ echo DIST: $DIST
 echo PLATFORM: $PLATFORM
 echo VERSION: $VERSION
 
+CAPITAL=$(capital "$1")
+UPROJECT="$CAPITAL.uproject"
+
 "$UE4/Engine/Build/BatchFiles/RunUAT.sh" BuildCookRun \
-    -project="$PROJECTS/$1/$1.uproject" \
+    -project="$PROJECTS/$1/$UPROJECT" \
     -nocompileeditor -nop4 \
     -cook -stage -archive -archivedirectory="$DIST" \
     -package -clientconfig="$MODE" -ue4exe=UE4Editor \
