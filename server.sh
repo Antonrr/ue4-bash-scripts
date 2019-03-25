@@ -30,6 +30,6 @@ echo PLATFORM: $PLATFORM
     -compressed -prereqs \
     -platform="$PLATFORM" -targetplatform="$PLATFORM" -serverplatform="$PLATFORM" \
     -build -utf8output \
-    -messaging -ForceUnity -pak \
+    -messaging -ForceUnity \
     -installed -unversionedcookedcontent
 
