@@ -11,5 +11,5 @@ cd "$UE4/Engine/Build/BatchFiles/Mac"
 CAPITAL=$(capital "$1")
 UPROJECT="$CAPITAL.uproject"
 
-./GenerateProjectFiles.sh "$PROJECTS/$1/$UPROJECT" -xcode -game
+./GenerateProjectFiles.sh "$PROJECTS/$1/$UPROJECT" -xcode -game "${@:2}"
 

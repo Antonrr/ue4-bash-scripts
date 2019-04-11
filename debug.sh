@@ -9,5 +9,5 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 CAPITAL=$(capital "$1")
 UPROJECT="$CAPITAL.uproject"
 
-lldb "$EDITOR_EXE" -- "$PROJECTS/$1/$UPROJECT"
+lldb "$EDITOR_EXE" -- "$PROJECTS/$1/$UPROJECT" "${@:2}"
 

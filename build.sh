@@ -13,5 +13,5 @@ UPROJECT="$CAPITAL.uproject"
 
 echo "Building: $PROJECTS/$1/$UPROJECT"
 
-./Engine/Build/BatchFiles/Mac/Build.sh "${CAPITAL}Editor" Mac Development "$PROJECTS/$1/$UPROJECT" -buildscw
+./Engine/Build/BatchFiles/Mac/Build.sh "${CAPITAL}Editor" Mac Development "$PROJECTS/$1/$UPROJECT" -buildscw "${@:2}"
 

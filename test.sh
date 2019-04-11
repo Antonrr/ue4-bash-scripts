@@ -10,7 +10,7 @@ CAPITAL=$(capital "$1")
 UPROJECT="$CAPITAL.uproject"
 
 "$EDITOR_EXE" "$PROJECTS/$1/$UPROJECT" -Game -ExecCmds="Automation RunTests ${CAPITAL}Tests" \
-    -unattended -nopause -testexit="Automation Test Queue Empty" -log="TestResults.txt"
+    -unattended -nopause -testexit="Automation Test Queue Empty" -log="TestResults.txt" "${@:2}"
 
 echo "open ~/Library/Logs/$1/TestResults.txt"
 

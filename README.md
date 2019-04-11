@@ -19,7 +19,7 @@ Into your `.profile`:
 ```
 function my-project {
     SCRIPTS_DIR="$WORKSPACE/ue4-bash-scripts"
-    "$SCRIPTS_DIR/$1.sh" MyProject
+    "$SCRIPTS_DIR/$1.sh" MyProject "${@:2}"
 }
 ```
 

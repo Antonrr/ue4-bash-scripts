@@ -34,5 +34,6 @@ echo PLATFORM: $PLATFORM
     -platform="$PLATFORM" -targetplatform="$PLATFORM" -serverplatform="$PLATFORM" \
     -build -utf8output \
     -messaging -ForceUnity \
-    -installed -unversionedcookedcontent
+    -installed -unversionedcookedcontent \
+    "${@:2}"
 

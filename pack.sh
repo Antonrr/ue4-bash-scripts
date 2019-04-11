@@ -29,5 +29,6 @@ UPROJECT="$CAPITAL.uproject"
     -compressed -clean -pak -prereqs -nodebuginfo \
     -targetplatform="$PLATFORM" -build -utf8output \
     -messaging \
-    -installed -SkipCookingEditorContent -manifests
+    -installed -SkipCookingEditorContent -manifests \
+    "${@:2}"
 

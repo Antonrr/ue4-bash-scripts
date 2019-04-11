@@ -32,5 +32,6 @@ UPROJECT="$CAPITAL.uproject"
     -targetplatform="$PLATFORM" -build -utf8output \
     -platform="$PLATFORM" -Messaging \
     -unversionedcookedcontent -generatepatch -basedonreleaseversion=$VERSION \
-    -installed -manifests
+    -installed -manifests \
+    "${@:2}"
 
