@@ -2,8 +2,8 @@
 
 PROJECTS="$HOME/workspace"
 
-#UE4="/Users/Shared/EpicGames/UE_4.21"
-UE4="$PROJECTS/UnrealEngine"
+UE4="/Users/Shared/EpicGames/UE_4.22"
+#UE4="$PROJECTS/UnrealEngine"
 
 EDITOR="$UE4/Engine/Binaries/Mac/UE4Editor.app"
 EDITOR_EXE="$EDITOR/Contents/MacOS/UE4Editor"
