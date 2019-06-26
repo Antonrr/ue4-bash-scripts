@@ -8,5 +8,5 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 CAPITAL=$(capital "$1")
 
-ios-deploy --no-wifi --noinstall --bundle "$PROJECTS/$1/Binaries/IOS/Payload/$CAPITAL.app"
+ios-deploy --no-wifi --noinstall --bundle "$PROJECTS/$1/Binaries/IOS/Payload/$CAPITAL.app" "${@:2}"
 
