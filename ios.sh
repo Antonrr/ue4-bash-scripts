@@ -7,6 +7,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . "$DIR/common/config.source"
 . "$DIR/common/ios.source"
 
+# Build editor
+"$DIR/build.sh" $1
+
 MODE="Development"
 
 PLATFORM="IOS"
